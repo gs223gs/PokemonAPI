@@ -1,5 +1,5 @@
 
-# Poke ID Check アプリ
+# Fetch-pokemon アプリ
 
 このアプリは、ユーザーがポケモンのID（pokeid）を入力し、そのポケモンの情報を取得して表示するシンプルなReactアプリです。
 
@@ -18,11 +18,11 @@
 
 1. リポジトリをクローンします。
    ```bash
-   git clone https://github.com/gs223gs/PokemonAPI
+   git clone https://github.com/gs223gs/fetch-pokemon
    ```
 2. ディレクトリに移動します。
    ```bash
-   cd poke-id-check
+   cd fetch-pokemon
    ```
 
 

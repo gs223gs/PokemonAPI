@@ -65,6 +65,8 @@ export const App = () => {
   return (
     <>
       <div>
+        <h1>ポケモン検索</h1>
+        <p>ポケモンのIDを入力してください</p>
         <form
           onSubmit={(e) => {
             e.preventDefault(); // フォームのデフォルトの送信を防ぐ

@@ -1,5 +1,5 @@
 services:
-  node:
+  web:
     build: .
     environment:
       - NODE_ENV=development

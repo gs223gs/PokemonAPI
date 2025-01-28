@@ -7,3 +7,5 @@ RUN apk update && npm update && apk add \
     tree \
     curl \
     wget
+
+CMD ["npm", "run", "dev"]

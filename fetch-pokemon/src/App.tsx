@@ -1,17 +1,13 @@
 import { useState } from "react";
 
+import PokemonList from './components/PokemonList';
+import PokemonForm from './components/PokemonForm';
+
 type Pokemon = {
   readonly id: number;
-  pokeid: string;
+  pokeid: number;
   name: string;
   height: number;
-  // types: {
-  //   slot: number;
-  //   type: {
-  //     name: string;
-  //     url: string;
-  //   };
-  // }[];
 };
 
 
@@ -20,7 +16,7 @@ export const App = () => {
   const [pokeid, setPokeid] = useState("");
   // Pokemonのリストを管理するためのuseStateフック
   const [pokemons, setPokemon] = useState<Pokemon[]>([]);
-
+  console.log(pokemons)
   // 入力フィールドの値を更新する関数
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPokeid(e.target.value);
@@ -38,18 +34,9 @@ export const App = () => {
         // 取得したデータをPokemon型にマッピング
         const newPokemon: Pokemon = {
           id: new Date().getTime(), // 一意のIDを生成
-          pokeid: pokeid, // 入力されたpokeid
+          pokeid: Number(pokeid), // pokeidを数値に変換
           name: data.name, // 取得したポケモンの名前
           height: data.height, // 取得したポケモンの高さ
-          // types: [
-          //   {
-          //     slot: 0,
-          //     type: {
-          //       name: data.type.name,
-          //       url: data.type.url,
-          //     },
-          //   },
-          // ],
         };
         // 新しいポケモンをリストに追加
         setPokemon((pokemon) => [newPokemon, ...pokemon]);
@@ -63,46 +50,11 @@ export const App = () => {
   };
 
   return (
-    <>
       <div>
         <h1>ポケモン検索</h1>
         <p>ポケモンのIDを入力してください</p>
-        <form
-          onSubmit={(e) => {
-            e.preventDefault(); // フォームのデフォルトの送信を防ぐ
-            handleSubmit(); // フォームの送信処理を実行
-          }}
-        >
-          <input type="text" value={pokeid} onChange={(e) => handleChange(e)} />
-          <input type="submit" value="検索" />
-        </form>
+        <PokemonForm handleSubmit = {handleSubmit} handleChange={handleChange} pokeid={pokeid}/>
+        <PokemonList pokemons={pokemons}/>
       </div>
-      <div>
-        <ul>
-          {pokemons.map((pokemon) => {
-            return (
-              <li key={pokemon.id}>
-                <img
-                  src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.pokeid}.png`}
-                  alt={pokemon.name} // ポケモンの名前をalt属性に設定
-                />
-                <div>
-                  <p>
-                    No:<span>{pokemon.pokeid}</span>
-                  </p>
-                  <p>
-                    Name:<span>{pokemon.name}</span>
-                  </p>
-                  <p>
-                    Height:<span>{pokemon.height}</span>
-                  </p>
-                </div>
-                <hr />
-              </li>
-            );
-          })}
-        </ul>
-      </div>
-    </>
   );
 };

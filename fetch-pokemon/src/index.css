@@ -27,3 +27,110 @@ ul {
 li {
   margin-bottom: 0.5em;
 }
+
+body{
+  background: rgb(65, 65, 65);
+  color: white
+}
+
+body.white{
+  background: rgb(255, 255, 255);
+  color: rgb(0, 0, 0)
+}
+
+
+/*-----------------------------------------------------------
+  以下、各コンポーネントのスタイル
+-----------------------------------------------------------*/
+
+/* -- PokemonItem コンポーネントのスタイル -- */
+.pokemonitem {
+  display: flex;
+  align-items: flex-start;
+  gap: 1em;
+  padding: 1em;
+  background-color: #333;
+  border: 1px solid #444;
+  border-radius: 4px;
+  margin-bottom: 1em;
+}
+
+.pokemonitem-img {
+  width: 80px;
+  height: auto;
+  display: block;
+}
+
+.pokemonitem-details {
+  flex: 1;
+}
+
+.pokemonitem-details p {
+  margin: 0.2em 0;
+}
+
+.pokemonitem-details__no span,
+.pokemonitem-details__name span,
+.pokemonitem-details__height span {
+  font-weight: bold;
+  margin-left: 0.5em;
+}
+
+.pokemonitem-details__separator {
+  margin-top: 1em;
+  border: none;
+  border-top: 1px solid #888;
+}
+
+/* -- PokemonForm コンポーネントのスタイル -- */
+.pokemonform {
+  margin: 1em 0;
+  padding: 1em;
+  background-color: #444;
+  border: 1px solid #555;
+  border-radius: 4px;
+}
+
+.pokemonform-form {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.pokemonform-input {
+  flex: 1;
+  padding: 0.5em;
+  border: 1px solid #666;
+  border-radius: 4px;
+  background-color: #222;
+  color: white;
+}
+
+.pokemonform-submit {
+  background-color: #888;
+  color: white;
+  border: none;
+  padding: 0.5em 1em;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.pokemonform-submit:hover {
+  background-color: #aaa;
+}
+
+/* -- PokemonList コンポーネントのスタイル -- */
+.pokemon-list {
+  margin-top: 1em;
+}
+
+.pokemon-list__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pokemon-list__item {
+  margin-bottom: 1em;
+}

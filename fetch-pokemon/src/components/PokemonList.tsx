@@ -1,29 +1,22 @@
 import PokemonItem from "./PokemonItem";
-import { PokemonContext, usePokemon } from "../contexts/PokemonContext";
-interface Pokemon {
-  id: number;
-  pokeid: number;
-  name: string;
-  height: number;
-}
+import { usePokemon } from "../contexts/PokemonContext";
+
 
 const PokemonList = () => {
   const pokemons = usePokemon();
   return (
-    <div>
-      <ul>
-        {pokemons.map((pokemon) => {
-          return (
-            <li key={pokemon.id}>
-              <PokemonItem
-                id={pokemon.id}
-                pokeid={pokemon.pokeid}
-                name={pokemon.name}
-                height={pokemon.height}
-              />
-            </li>
-          );
-        })}
+    <div className="pokemon-list">
+      <ul className="pokemon-list__list">
+        {pokemons.map((pokemon) => (
+          <li key={pokemon.id} className="pokemon-list__item">
+            <PokemonItem
+              id={pokemon.id}
+              pokeid={pokemon.pokeid}
+              name={pokemon.name}
+              height={pokemon.height}
+            />
+          </li>
+        ))}
       </ul>
     </div>
   );

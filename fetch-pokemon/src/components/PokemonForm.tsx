@@ -1,5 +1,6 @@
-
-const PokemonForm = ({ handleSubmit, handleChange, pokeid }) => {
+import { useFetchPokemon } from "../contexts/PokemonContext";
+const PokemonForm = () => {
+  const [handleSubmit,handleChange,pokeid] = useFetchPokemon()
   return (
     <div>
       <form

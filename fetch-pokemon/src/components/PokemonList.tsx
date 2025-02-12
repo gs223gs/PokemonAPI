@@ -1,5 +1,5 @@
 import PokemonItem from "./PokemonItem";
-
+import { PokemonContext, usePokemon } from "../contexts/PokemonContext";
 interface Pokemon {
   id: number;
   pokeid: number;
@@ -7,7 +7,8 @@ interface Pokemon {
   height: number;
 }
 
-const PokemonList = ({ pokemons }: { pokemons: Pokemon[] }) => {
+const PokemonList = () => {
+  const pokemons = usePokemon();
   return (
     <div>
       <ul>

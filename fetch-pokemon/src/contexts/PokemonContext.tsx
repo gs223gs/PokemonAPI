@@ -26,8 +26,6 @@ export const PokemonProvider = ({ children }: PokemonProviderProps) => {
   const [pokeid, setPokeid] = useState("");
   // Pokemonのリストを管理するためのuseStateフック
   const [pokemons, setPokemon] = useState<Pokemon[]>([]);
-  console.log(pokemons);
-
   // 入力フィールドの値を更新する関数
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPokeid(e.target.value);

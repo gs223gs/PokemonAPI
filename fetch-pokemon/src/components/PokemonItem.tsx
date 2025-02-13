@@ -5,13 +5,9 @@ interface PokemonItemProps {
   height: number;
 }
 
-const PokemonItem = ({
-  pokeid,
-  name,
-  height,
-}: PokemonItemProps) => {
+const PokemonItem = ({ pokeid, name, height }: PokemonItemProps) => {
   return (
-    <div className='pokemonitem'>
+    <div className="pokemonitem">
       <img
         src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokeid}.png`}
         alt={name} // ポケモンの名前をalt属性に設定

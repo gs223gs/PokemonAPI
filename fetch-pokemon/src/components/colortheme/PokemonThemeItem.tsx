@@ -13,7 +13,7 @@ const PokemonThemeItem: React.FC<PokemonThemeItemProps> = ({ theme_color }) => {
   const [, setTheme] = themeContext;
 
   return (
-    <label htmlFor={`theme-${theme_color}`}>
+    <label htmlFor={`theme-${theme_color}`} className={`label ${theme}`}>
       <input
         id={`theme-${theme_color}`}
         type="radio"
@@ -23,6 +23,7 @@ const PokemonThemeItem: React.FC<PokemonThemeItemProps> = ({ theme_color }) => {
         onChange={(e) =>{
           setTheme(e.target.value)
         }}
+        className={`input ${theme}`}
       />
       {theme_color}
     </label>

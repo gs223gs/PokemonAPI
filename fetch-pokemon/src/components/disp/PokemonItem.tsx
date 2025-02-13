@@ -1,3 +1,4 @@
+import { useTheme } from "../../contexts/ColorContext";
 interface PokemonItemProps {
   id: number;
   pokeid: number;
@@ -6,25 +7,26 @@ interface PokemonItemProps {
 }
 
 const PokemonItem = ({ pokeid, name, height }: PokemonItemProps) => {
+  const [theme,] = useTheme()
   return (
-    <div className="pokemonitem">
+    <div className={`pokemonitem ${theme}`}>
       <img
         src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokeid}.png`}
         alt={name} // ポケモンの名前をalt属性に設定
-        className="pokemonitem-img"
+        className={`pokemonitem-img ${theme}`}
       />
-      <div className="pokemonitem-details">
-        <p className="pokemonitem-details__no">
+      <div className={`pokemonitem-details ${theme}`}>
+        <p className={`pokemonitem-details__no ${theme}`}>
           No:<span>{pokeid}</span>
         </p>
-        <p className="pokemonitem-details__name">
+        <p className={`pokemonitem-details__name ${theme}`}>
           Name:<span>{name}</span>
         </p>
-        <p className="pokemonitem-details__height">
+        <p className={`pokemonitem-details__height ${theme}`}>
           Height:<span>{height}</span>
         </p>
       </div>
-      <hr className="pokemonitem-details__separator" />
+      <hr className={`pokemonitem-details__separator ${theme}`} />
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import { useTheme } from "../contexts/ColorContext";
+import { useTheme } from "../../contexts/ColorContext";
 
 interface PokemonThemeItemProps {
   theme_color: string;

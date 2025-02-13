@@ -1,5 +1,5 @@
 import PokemonItem from "./PokemonItem";
-import { usePokemon } from "../contexts/PokemonContext";
+import { usePokemon } from "../../contexts/PokemonContext";
 
 
 const PokemonList = () => {

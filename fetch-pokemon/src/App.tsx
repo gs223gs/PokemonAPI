@@ -1,6 +1,6 @@
-import PokemonList from "./components/PokemonList";
-import PokemonForm from "./components/PokemonForm";
-import PokemonTheme from "./components/PokemonTheme";
+import PokemonList from "./components/disp/PokemonList";
+import PokemonForm from "./components/fetch/PokemonForm";
+import PokemonTheme from "./components/colortheme/PokemonTheme";
 import { PokemonProvider } from "./contexts/PokemonContext";
 import { PokemonThemeProvider } from "./contexts/ColorContext";
 
